@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CANDALERIAA - Handmade Scented Candles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff9f9;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      color: #5e4b48;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background: #fddde6;
+      text-align: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav button {
+      background: #ffe8e8;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #5e4b48;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: #fbc4d7;
+      transform: scale(1.05);
+    }
+    .section {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 0.5s ease;
+    }
+    .active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .product-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .product {
+      width: 220px;
+      background: #ffe8e8;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0px 0px 8px #f2cccc;
+      transition: 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+    .price {
+      color: #d76a8a;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .product button {
+      background: #ffc1c1;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #5e4b48;
+      transition: 0.3s;
+    }
+    .product button:hover {
+      background: #fda8c2;
+    }
+    .cart {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      background: #ffe8e8;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #5e4b48;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    form input, form textarea {
+      width: 300px;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #fbc4d7;
+      border-radius: 8px;
+      background: #fff9f9;
+    }
+    form button {
+      background: #ffc1c1;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover {
+      background: #fda8c2;
+    }
+    .bill, .qr-payment, .success {
+      margin-top: 30px;
+      background: #ffe8e8;
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .bill h3, .qr-payment h3, .success h3 {
+      margin-bottom: 20px;
+    }
+    .success img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1 style="font-family: 'Playfair Display', serif;">CANDALERIAA</h1>
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About Us</button>
+    <button onclick="showSection('products')">Products</button>
+    <button onclick="showSection('testimonials')">Testimonials</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+  <div class="cart">Cart: <span id="cart-count">0</span></div>
+</header>
+
+<!-- Home Section -->
+<div id="home" class="section active">
+  <h2>Welcome to <span style="color: #d76a8a;">CANDALERIAA</span></h2>
+  <p>Discover the art of relaxation with our handmade, eco-friendly scented candles.  
+  Crafted to bring warmth, beauty, and heavenly aromas into your home.</p>
+  <img src="https://raw.githubusercontent.com/PARINISTAA/imagescandaleriaa/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2016.58.32.jpeg?text=Handmade+Candles" style="margin-top: 20px; border-radius: 15px;">
+</div>
+
+<!-- About Section -->
+<div id="about" class="section">
+  <h2>Our Story</h2>
+  <p>It all started with a simple idea—bringing warmth, comfort, and a little magic into everyday moments. In the heart of our cozy home studio, surrounded by the gentle flicker of candlelight, we poured our very first batch of scented candles. What began as a personal escape—an expression of creativity and a love for beautiful aromas—quickly grew into a passion we wanted to share with the world.
+
+    Every candle we create is hand-poured in small batches using eco-friendly soy wax, premium fragrance oils, and a whole lot of love. We believe in the power of scent to transport, soothe, and inspire. Whether it’s the calming notes of lavender after a long day or the nostalgic hint of vanilla that reminds you of home, our mission is to bottle those emotions and moments into something tangible.
+    
+    This little business is more than just candles—it’s about connection, self-care, and making life’s simple pleasures a little more special. Thank you for being here and letting us be a part of your story, one candle at a time.🪷
+    
+    Welcome to our world. Light up, slow down, and breathe it in.💕</p>
+  <p>At CANDALERIAA, we believe in crafting moments of peace and joy through the magic of scent.  
+  Our candles are hand-poured with love, using natural wax and high-quality essential oils.</p>
+  <p>Each fragrance tells a story — of dreamy beaches, misty forests, warm vanilla evenings, and tropical bliss.</p>
+  <img src="https://hamperpick.in/cdn/shop/articles/Scented_Candles_4.jpg?v=1733312046?text=homely+vibes" alt="CANDALERIAA" width="500">
+</div>
+
+<!-- Products Section -->
+<div id="products" class="section">
+  <h2>Our Products</h2>
+  <div class="product-gallery">
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/PARINISTAA/imagescandaleriaa/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2013.25.41.jpeg?text=Tropical+Delight" alt="Tropical Delight">
+      <h3>Tropical Delight Candle</h3>
+      <div class="price">₹499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+      <button onclick="buyNow(499)">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/PARINISTAA/imagescandaleriaa/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2013.25.40.jpeg?text=Blushy+Blush" alt="Blushy Blush">
+      <h3>Blushy Blush Candle</h3>
+      <div class="price">₹449</div>
+      <button onclick="addToCart()">Add to Cart</button>
+      <button onclick="buyNow(449)">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/PARINISTAA/imagescandaleriaa/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2013.25.40%20(1).jpeg?text=Misty+Forest" alt="Misty Forest">
+      <h3>Misty Forest Candle</h3>
+      <div class="price">₹529</div>
+      <button onclick="addToCart()">Add to Cart</button>
+      <button onclick="buyNow(529)">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/PARINISTAA/imagescandaleriaa/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2013.25.39.jpeg?text=Serene+Citrus" alt="Serene Citrus">
+      <h3>Serene Citrus Candle</h3>
+      <div class="price">₹479</div>
+      <button onclick="addToCart()">Add to Cart</button>
+      <button onclick="buyNow(479)">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/PARINISTAA/imagescandaleriaa/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2013.25.40%20(3).jpeg?text=French+Vanilla" alt="French Vanilla">
+      <h3>French Vanilla Candle</h3>
+      <div class="price">₹499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+      <button onclick="buyNow(499)">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div id="testimonials" class="section">
+  <h2>Happy Customers</h2>
+  <p>"Absolutely magical! My home smells like a tropical paradise." - Aditi S.</p>
+  <p>"Each candle feels like a luxury. Totally worth it!" - Rahul K.</p>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="section">
+  <h2>Contact Us</h2>
+  <form onsubmit="alert('Thank you for reaching out!'); return false;">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<!-- Checkout Section -->
+<div id="checkout" class="section">
+  <div class="bill">
+    <h3>Order Summary</h3>
+    <p>Product Price: ₹<span id="product-price">0</span></p>
+    <p>Delivery Charges: ₹50</p>
+    <h4>Total: ₹<span id="total-price">0</span></h4>
+    <button onclick="proceedToPayment()">Proceed to Payment</button>
+  </div>
+</div>
+
+<!-- Payment QR Section -->
+<div id="payment" class="section">
+  <div class="qr-payment">
+    <h3>Scan to Pay</h3>
+    <img src="https://raw.githubusercontent.com/PARINISTAA/qrcode/refs/heads/main/WhatsApp%20Image%202025-04-30%20at%2016.31.11.jpeg?text=QR+Code" alt="QR Code" width="500">
+    <p>After payment, click below:</p>
+    <button onclick="paymentSuccess()">I Have Paid</button>
+  </div>
+</div>
+
+<!-- Success Section -->
+<div id="success" class="section">
+  <div class="success">
+    <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Success Tick">
+    <h3>Payment Successful!</h3>
+    <p>Your order will be delivered within 7 working days. Thank you!</p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 CANDALERIAA | Handmade with Love
+</footer>
+
+<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+  }
+
+  let cartCount = 0;
+  function addToCart() {
+    cartCount++;
+    document.getElementById('cart-count').innerText = cartCount;
+  }
+
+  let currentProductPrice = 0;
+  function buyNow(price) {
+    currentProductPrice = price;
+    document.getElementById('product-price').innerText = price;
+    document.getElementById('total-price').innerText = price + 50;
+    showSection('checkout');
+  }
+
+  function proceedToPayment() {
+    showSection('payment');
+  }
+
+  function paymentSuccess() {
+    showSection('success');
+  }
+</script>
+
+</body>
+</html>
